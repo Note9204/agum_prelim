@@ -1,0 +1,122 @@
+ * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+			  max-width: 800px;
+            margin: 0 auto;
+        }
+  .header h1 {
+            text-align: left;
+        }
+		 .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: skyblue;
+            color: black;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+            border: none;
+        }
+
+        .slider-container {
+            width: 110vw;
+            height: 325vh;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            margin: 1rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            width: 400%; /* Corrected to match the number of slides */
+            height: 100%;
+            animation: slider 30s ease-in-out infinite alternate;
+        }
+
+        .slide {
+            flex: 0 0 25%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .container .wrapper {
+            width: 50vw;
+            height: 25vh;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            margin: 1rem auto; /* Corrected from "srem" */
+            overflow: hidden;
+        }
+
+        .container .wrapper-holder {
+            display: grid;
+            grid-template-columns: repeat(4, 100%);
+            width: 400%; /* Corrected to match the number of slides */
+            height: 100%;
+            animation: slider 30s ease-in-out infinite alternate; /* Corrected timing value */
+        }
+
+        .container .wrapper-holder > div {
+            background-position: center;
+            background-size: cover; /* Added for better image display */
+        }
+
+         .button-holder {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            pointer-events: none; /* Prevent buttons from blocking clicks on slides */
+        }
+
+        .arrow {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .arrow-left {
+            margin-left: 10px;
+        }
+
+        .arrow-right {
+            margin-right: 10px;
+        }
+
+        .container .button-holder .button {
+            background-color: white;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px; /* Corrected to include "px" */
+            display: inline-block;
+            margin: 0.3rem;
+        }
+
+        @keyframes slider {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-300%); } /* Corrected for full animation loop */
+        }
+
+        /* Added a general style for the slider images */
+        .container .wrapper-holder > div {
+            background-repeat: no-repeat;
+        }
